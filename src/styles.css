@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.corpo{
+  background-size: 1508px 1024px;
+  background-position-x: -20px;
+  background-repeat: no-repeat;
+  background-color: rgba(204, 158, 137, 0.29);
+}
+
+.navbar{
+  background-color: #503529;
+}

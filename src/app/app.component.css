@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&display=swap');
+
+.titulo{
+  font: bold;
+  color: white;
+  font-size: x-large;
+  margin-right: 77%;
+}
+
+.navbar{
+  background-color: #503529;
+}
+
+.caixaCardapio{
+  background-color: #684E43;
+  opacity: 0.81;
+}
+
+.caixaPedido{
+  padding: 10% 10% 10% 10%;
+  background-color: #E5E9F2;
+  margin-right: 20%;
+  font: bold,medium;
+  font-family: 'Cardo', serif;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+}
+
+.botao{
+  font-family: 'Lato';
+  color: white;
+}
+
+.button{
+  margin-top: 10%;
+  background-color: #47525E;
+  border-radius: 29px;
+  width: 50%;
+  height: 60%;
+}
