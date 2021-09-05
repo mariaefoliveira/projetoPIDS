@@ -1,0 +1,41 @@
+.caixaTituloForm{
+  background-color: #684E43;
+  opacity: 0.81;
+  margin-top: 20px;
+  margin-left: 10%;
+  border-radius: 55px;
+}
+
+.caixaForm{
+  background-color: #f5f6f7;
+  opacity: 0.81;
+  margin-top: 3px;
+  margin-left: 10%;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.espaco{
+  padding-top: 10px;
+}
+.texto{
+  font: medium;
+  font-family: 'Cardo', serif;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+
+.botao{
+  font-family: 'Lato';
+  color: white;
+}
+
+.button{
+  margin-top: 2%;
+  background-color: #38322F;
+  border-radius: 10px;
+  padding: 1% 2%;
+}
+

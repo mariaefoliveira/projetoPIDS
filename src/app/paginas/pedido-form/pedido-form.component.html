@@ -1,1 +1,90 @@
-<p>pedido-form works!</p>
+
+<!--Montar a imagem do cadastro-->
+<div class="container">
+  <div class="col-9 align-self-center texto caixaTituloForm" >
+    Faça o seu ovo de chocolate!
+  </div>
+
+  <!--Formulario do titulo-->
+  <div class="col-9 align-self-center caixaForm" style="margin-bottom: 5%;">
+
+    <div class="input-group">
+      <span class="input-group-text textoForm">Nome</span>
+      <input type="text" aria-label="nome" class="form-control">
+    </div>
+
+    <div class="input-group espaco">
+      <span class="input-group-text textoForm">Endereço</span>
+      <input type="adress" aria-label="endereco" class="form-control">
+    </div>
+
+    <!--Telefone-Testar-->
+      <div class="input-group espaco">
+        <span class="input-group-text textoForm">+55</span>
+        <input type="phone" class="form-control" name="telefone" placeholder="(99) 9 9999-9999"
+        pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
+        title="Número de telefone precisa ser no formato (99) 9 9999-9999" required="required"/>
+     </div>
+
+  <div class="input-group espaco">
+      <span class="input-group-text textoForm">Tipo do ovo</span>
+      <select type="text" aria-label="tipo-ovo" class="form-control" style="margin-right: 15px;">
+      <!--Select do tipo-->
+      </select>
+
+      <span class="input-group-text textoForm">Tamanho</span>
+      <select type="text" aria-label="tamanho" class="form-control">
+        <!--Select do tamanho-->
+      </select>
+  </div>
+
+    <!--Select do sabor-->
+    <div class="input-group espaco">
+    <span class="input-group-text textoForm">Sabor 1</span>
+    <select type="text" aria-label="sabor1" class="form-control">
+    </select>
+    </div>
+
+    <div class="input-group espaco">
+      <span class="input-group-text textoForm">Sabor 2</span>
+      <select type="text" aria-label="sabor2" class="form-control">
+      </select>
+    </div>
+
+    <div class="input-group espaco">
+      <span class="input-group-text textoForm">Sabor 3</span>
+      <select type="text" aria-label="sabor3" class="form-control">
+      </select>
+    </div>
+
+    <div class="input-group espaco">
+      <span class="input-group-text textoForm">Sabor 4</span>
+      <select type="text" aria-label="sabor4" class="form-control">
+      </select>
+    </div>
+
+    <div class="input-group espaco">
+      <span class="input-group-text textoForm">Sabor 5</span>
+      <select type="text" aria-label="sabor5" class="form-control">
+      </select>
+    </div>
+
+<!--Campo observação-->
+<div class="mb-3 input-group espaco">
+  <span for="observacao" class="form textoForm" style="margin-top: 4%; padding-right: 1%;">Observação:</span>
+  <textarea class="form-control" id="observacao" rows="3"></textarea>
+</div>
+
+    <br/>
+
+    <button type="button" class="button botao" [routerLink]= "['/']" style="margin-left: 42%;">
+    Enviar
+    </button> <!--Envia os dados e volta pro home-->
+
+    <button type="button" class="button botao" [routerLink]= "['/']" style="margin-left:2%">
+      Cancelar
+    </button> <!--Cancela e volta pro home-->
+
+</div>
+</div>
+
