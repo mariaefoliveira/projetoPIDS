@@ -7,33 +7,40 @@
 
   <!--Formulario do titulo-->
   <div class="col-9 align-self-center caixaForm" style="margin-bottom: 5%;">
+    <form (ngSubmit)="salvarPedido()"  #formTask="ngForm">
 
     <div class="input-group">
       <span class="input-group-text textoForm">Nome</span>
-      <input type="text" aria-label="nome" class="form-control">
+      <input type="text" aria-label="nome" [(ngModel)]="pedido.nome" name="nome" class="form-control">
     </div>
 
     <div class="input-group espaco">
       <span class="input-group-text textoForm">Endereço</span>
-      <input type="adress" aria-label="endereco" class="form-control">
+      <input type="adress" aria-label="endereco" [(ngModel)]="pedido.endereco" name="endereco" class="form-control">
     </div>
 
     <!--Telefone-Testar-->
       <div class="input-group espaco">
         <span class="input-group-text textoForm">+55</span>
-        <input type="phone" class="form-control" name="telefone" placeholder="(99) 9 9999-9999"
+        <input type="phone" class="form-control" [(ngModel)]="pedido.numero" name="telefone" placeholder="(99) 9 9999-9999"
         pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
         title="Número de telefone precisa ser no formato (99) 9 9999-9999" required="required"/>
      </div>
 
   <div class="input-group espaco">
       <span class="input-group-text textoForm">Tipo do ovo</span>
-      <select type="text" aria-label="tipo-ovo" class="form-control" style="margin-right: 15px;">
+      <select type="text" aria-label="tipo-ovo" [(ngModel)]="pedido.tipoOvo" name="tipoovo" class="form-control" style="margin-right: 15px;">
+        <option [value]="undefined">Selecione</option>
+        <option value="Colher">Colher</option>
+        <option value="Simples">Simples</option>
+        <option value="Trufado">Trufado</option>
       <!--Select do tipo-->
       </select>
 
       <span class="input-group-text textoForm">Tamanho</span>
-      <select type="text" aria-label="tamanho" class="form-control">
+      <select type="text" aria-label="tamanho" [(ngModel)]="pedido.idTamanho" name="tamanho" class="form-control">
+        <option [value]="undefined">Selecione</option>
+        <option *ngFor="let tamanho of tamanhos" [value]="tamanho.id">{{tamanho.tamanho}}</option>
         <!--Select do tamanho-->
       </select>
   </div>
@@ -41,47 +48,64 @@
     <!--Select do sabor-->
     <div class="input-group espaco">
     <span class="input-group-text textoForm">Sabor 1</span>
-    <select type="text" aria-label="sabor1" class="form-control">
+    <select type="text" aria-label="sabor1" [(ngModel)]="pedido.idSaborUm" name="saborUm" class="form-control">
+      <option [value]="undefined">Selecione</option>
+      <option *ngFor="let sabor of sabores" [value]="sabor.id">{{sabor.sabor}}</option>
     </select>
     </div>
 
     <div class="input-group espaco">
       <span class="input-group-text textoForm">Sabor 2</span>
-      <select type="text" aria-label="sabor2" class="form-control">
+      <select type="text" aria-label="sabor2" [(ngModel)]="pedido.idSaborDois" name="saborDois" class="form-control">
+        <option [value]="undefined">Selecione</option>
+        <option *ngFor="let sabor of sabores" [value]="sabor.id">{{sabor.sabor}}</option>
       </select>
     </div>
 
     <div class="input-group espaco">
       <span class="input-group-text textoForm">Sabor 3</span>
-      <select type="text" aria-label="sabor3" class="form-control">
+      <select type="text" aria-label="sabor3" [(ngModel)]="pedido.idSaborTres" name="saborTres" class="form-control">
+        <option [value]="undefined">Selecione</option>
+        <option *ngFor="let sabor of sabores" [value]="sabor.id">{{sabor.sabor}}</option>
       </select>
     </div>
 
     <div class="input-group espaco">
       <span class="input-group-text textoForm">Sabor 4</span>
-      <select type="text" aria-label="sabor4" class="form-control">
+      <select type="text" aria-label="sabor4" [(ngModel)]="pedido.idSaborQuatro" name="saborQuatro" class="form-control">
+        <option [value]="undefined">Selecione</option>
+        <option *ngFor="let sabor of sabores" [value]="sabor.id">{{sabor.sabor}}</option>
       </select>
     </div>
 
     <div class="input-group espaco">
       <span class="input-group-text textoForm">Sabor 5</span>
-      <select type="text" aria-label="sabor5" class="form-control">
+      <select type="text" aria-label="sabor5" [(ngModel)]="pedido.idSaborCinco" name="saborCinco" class="form-control">
+        <option [value]="undefined">Selecione</option>
+        <option *ngFor="let sabor of sabores" [value]="sabor.id">{{sabor.sabor}}</option>
       </select>
     </div>
 
 <!--Campo observação-->
 <div class="mb-3 input-group espaco">
   <span for="observacao" class="form textoForm" style="margin-top: 4%; padding-right: 1%;">Observação:</span>
-  <textarea class="form-control" id="observacao" rows="3"></textarea>
+  <textarea class="form-control" id="observacao" [(ngModel)]="pedido.observacao" name="observacao" rows="3"></textarea>
 </div>
 
-    <button type="button" class="button botao" [routerLink]= "['/']" style="margin-left: 42%;">
-    Enviar
+      <div>
+        <span for="data" class="input-append date" style="margin-top: 4%; padding-right: 1%;">Data</span>
+        <input min="hoje()" id="date" type="date" name="data" [(ngModel)]="pedido.dataEntrega">
+      </div>
+
+    <button type="submit" class="button botao" style="margin-left: 42%;">
+    Salvar
     </button> <!--Envia os dados e volta pro home-->
 
     <button type="button" class="button botao" [routerLink]= "['/']" style="margin-left:2%">
       Cancelar
     </button> <!--Cancela e volta pro home-->
+
+    </form>
 
 </div>
 </div>

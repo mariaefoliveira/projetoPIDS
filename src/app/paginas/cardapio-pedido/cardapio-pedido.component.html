@@ -13,29 +13,13 @@
         <tr>
           <th scope="col">Tam. Disponível</th>
           <th scope="col"></th>
-          <th scope="col"></th>
-
-          <th scope="col"></th>
         </tr>
       </thead>
       <tbody style="margin-right: 80%;">
-        <tr>
-          <th scope="row">150g</th>
-          <td>R$ 10.00</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">200g</th>
-          <td>R$ 10.00</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">300g</th>
-          <td>R$ 10.00</td>
-          <td></td>
-          <td></td>
+        <tr *ngFor='let c of cardapio'>
+          <td> {{ c.tipoOvo }}</td>
+          <td> {{ c.peso }}g</td>
+          <td>R$ {{ c.valor | number:'1.2-2' }}</td>
         </tr>
     </table>
 
