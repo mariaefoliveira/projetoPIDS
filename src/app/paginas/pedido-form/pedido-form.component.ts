@@ -38,12 +38,13 @@ export class PedidoFormComponent implements OnInit {
     private router: Router,) { }
 
   private buscarSabores() {
-    this.pedidoService.getSabores().subscribe(result => {
+
+      this.pedidoService.getSabores().subscribe(result => {
         this.sabores = result;
         console.log(result);
       },
       erro => {
-        window.alert(erro);
+        //Deixar mensagem amigavel
       }
     );
   }
@@ -54,7 +55,7 @@ export class PedidoFormComponent implements OnInit {
         console.log(result);
       },
       erro => {
-        window.alert(erro);
+        //Deixar mensagem amigavel
       }
     );
   }
@@ -62,12 +63,26 @@ export class PedidoFormComponent implements OnInit {
   salvarPedido(){
     if(this.pedido.nome == null || this.pedido.nome.length < 5){
       window.alert("Nome não pode ser vazio e deve ter mais de 4 caracteres");
+    }else if(!this.pedido.tipoOvo){
+
+    window.alert("O tipo do ovo não pode ser vazio");
+
+    }else if(!this.pedido.idTamanho){
+      window.alert("O tamanho não pode ser vazio");
+    }else if(!this.pedido.idSaborUm&&!this.pedido.idSaborDois&&!this.pedido.idSaborTres
+      &&!this.pedido.idSaborQuatro&&!this.pedido.idSaborCinco){
+      window.alert("Deve escolher ao menos 1 sabor");
+    }else if(!this.pedido.tipoOvo){
+      window.alert("Deve escolher o tipo de ovo");
+
     } else {
       if(window.confirm("Salvar dados?")){
         this.pedidoService.salvarPedido(this.pedido).subscribe( data => {
+
           this.router.navigate([''])
         }, erro => {
-          window.alert(erro);
+
+          window.alert("Por favor. Verifique os campos."); //Mensagem amigavel
         })
       }
     }
