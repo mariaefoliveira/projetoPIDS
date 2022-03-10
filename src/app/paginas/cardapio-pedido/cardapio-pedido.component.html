@@ -1,21 +1,23 @@
 <!--Caixa do cardapio-->
 <div class="container overflow-hidden">
-  <div class="row gx-5">
+  <div class="row">
     <div class="col">
-     <div class="p-3 caixaCardapio" >
+     <div class="p-2 caixaCardapio" >
 
     <!--Aqui ficara o cardapio
     -> Item   Custo
     -> Tamanhos disponiveis-->
 
-    <table class="table table-borderless">
-      <thead>
+    <table mat-table class="mat-elevation-z3 demo-table
+    table tabela">
+      <thead class="table-dark">
         <tr>
           <th scope="col">Tam. Disponível</th>
-          <th scope="col"></th>
+          <th scope="col">Peso</th>
+          <th scope="col">Preço</th>
         </tr>
       </thead>
-      <tbody style="margin-right: 80%;">
+      <tbody>
         <tr *ngFor='let c of cardapio'>
           <td> {{ c.tipoOvo }}</td>
           <td> {{ c.peso }}g</td>
@@ -30,16 +32,22 @@
     </div>
 
     <!--Caixa do fazer pedido-->
-    <div class="col">
-      <div class="p3 caixaPedido">
-        Faça já o seu pedido clicando no botão abaixo.
-        <br/>
+    <div _ngcontent-dat-c5 class="p-2">
+      <mat-card>
+        <mat-card-content>
+        <div class="caixaPedido">
+          Faça já o seu pedido clicando no botão abaixo.
+          <br/>
 
-          <button type="button" class="button botao" [routerLink]= "['/fazer-pedido']">Fazer Pedido</button>
+          <br/>
+            <button type="button" class=" btn btn-dark botao" [routerLink]= "['/fazer-pedido']">Fazer Pedido</button>
 
-      </div>
+        </div>
+        </mat-card-content>
+      </mat-card>
     </div>
-  </div>
+    </div>
+
 </div>
 
 <!--Analisar se deve ser colocado as redes sociais no site-->

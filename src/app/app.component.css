@@ -8,17 +8,18 @@
 }
 
 .navbar{
-  background-color: #503529;
+  background-color: #0a0404;
 }
 
+
 .caixaCardapio{
-  background-color: #684E43;
+  background-color: #ffffff;
   opacity: 0.81;
 }
 
 .caixaPedido{
   padding: 10% 10% 10% 10%;
-  background-color: #E5E9F2;
+  background-color: white;
   margin-right: 20%;
   font: bold,medium;
   font-family: 'Cardo', serif;
@@ -38,4 +39,13 @@
   border-radius: 29px;
   width: 50%;
   height: 60%;
+}
+
+.footer {
+  background-color: #0a0404;
+  color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 11pt;
 }

@@ -16,7 +16,6 @@ export class PedidoFormComponent implements OnInit {
   public tamanhos: Tamanho[] = [];
   public sabores: Sabor[] = [];
 
-
   ngOnInit(): void {
     this.buscarSabores();
     this.buscarTamanhos();
@@ -29,7 +28,6 @@ export class PedidoFormComponent implements OnInit {
           this.pedido = data;
       })
     }
-
   }
 
   constructor(
@@ -60,7 +58,15 @@ export class PedidoFormComponent implements OnInit {
     );
   }
 
+statusEntregar(event: { checked: any; }){
+  if(event.checked){
+    this.pedido.entregar="SIM";
+  }else{
+    this.pedido.entregar="NAO";
+  }
+}
   salvarPedido(){
+
     if(this.pedido.nome == null || this.pedido.nome.length < 5){
       window.alert("Nome não pode ser vazio e deve ter mais de 4 caracteres");
     }else if(!this.pedido.tipoOvo){
@@ -76,6 +82,8 @@ export class PedidoFormComponent implements OnInit {
       window.alert("Deve escolher o tipo de ovo");
 
     } else {
+      console.log("Entregar: "+this.pedido.entregar);
+
       if(window.confirm("Salvar dados?")){
         this.pedidoService.salvarPedido(this.pedido).subscribe( data => {
 

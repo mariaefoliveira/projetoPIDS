@@ -1,12 +1,16 @@
 
 <!--Montar a imagem do cadastro-->
-<div class="container">
-  <div class="col-9 align-self-center texto caixaTituloForm" >
-    Faça o seu ovo de chocolate!
-  </div>
 
+
+<div class="container">
+
+  <div class="content__title texto caixaTituloForm" fxFlexAlign="center">
+    Faça o seu ovo de chocolate!
+      </div>
   <!--Formulario do titulo-->
-  <div class="col-9 align-self-center caixaForm" style="margin-bottom: 5%;">
+
+  <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%" style="margin-bottom: 5%;">
+  <div style="margin-bottom: 5%;">
     <form (ngSubmit)="salvarPedido()"  #formTask="ngForm">
 
     <div class="input-group">
@@ -22,14 +26,13 @@
     <!--Telefone-Testar-->
       <div class="input-group espaco">
         <span class="input-group-text textoForm">+55*</span>
-        <input type="phone" class="form-control" [(ngModel)]="pedido.numero" name="telefone" placeholder="(99) 9 9999-9999"
-        pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
-        title="Número de telefone precisa ser no formato (99) 9 9999-9999" required="required"/>
+        <input mat-input mask="(00) 0000-0000" type="phone" class="form-control" [(ngModel)]="pedido.numero" name="telefone" placeholder="(99) 9999-9999"
+        title="Número de telefone precisa ser no formato (99) 9999-9999" required="required"/>
      </div>
 
-  <div class="input-group espaco">
-    <span class="input-group-text textoForm">Tipo do ovo*</span>
-    <select type="text" aria-label="tipo-ovo" [(ngModel)]="pedido.tipoOvo" name="tipoovo" class="form-control" style="margin-right: 15px;">
+   <div class="input-group espaco">
+      <span class="input-group-text textoForm">Tipo do ovo*</span>
+      <select type="text" aria-label="tipo-ovo" [(ngModel)]="pedido.tipoOvo" name="tipoovo" class="form-control" style="margin-right: 15px;">
         <option [value]="undefined">Selecione</option>
         <option value="Colher">Colher</option>
         <option value="Simples">Simples</option>
@@ -43,7 +46,7 @@
         <option *ngFor="let tamanho of tamanhos" [value]="tamanho.id">{{tamanho.tamanho}}</option>
         <!--Select do tamanho-->
       </select>
-  </div>
+    </div>
 
     <!--Select do sabor-->
     <div class="input-group espaco">
@@ -86,19 +89,28 @@
       </select>
     </div>
 
-<!--Data-->
-<div class="espaco"></div>
-<span for="data" class="input-append date"></span>
-<input min="hoje()" id="date" type="date" name="data" [(ngModel)]="pedido.dataEntrega">
-<div class="textoVermelho espaco">**A data poderá ser alterada ao entrar em contato com o funcionário</div>
+  <!--Data-->
+  <div class="espaco" style="font-size: medium;">Agendar Entrega</div>
 
-<!--Campo observação-->
-<div class="mb-3 input-group espaco">
+  <span for="data" class="input-append date"></span>
+  <input id="date" type="date" name="data" [(ngModel)]="pedido.dataEntrega">
+  <!-- <input matInput [matDatepicker]="picker" name="data" [(ngModel)]="pedido.dataEntrega" (focus)="picker.open()"
+  (click)="picker.open()" readonly>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker> -->
+  <div class="textoVermelho espaco">**A data poderá ser alterada ao entrar em contato com o funcionário</div>
+
+  <!--Entregar-->
+  <section>
+    <!--<input type="checkbox" id="entregar" value="entregar" [(ngModel)]="pedido.entregar" (change)="statusEntregar($event)">-->
+    <mat-checkbox class="example-margin" [(ngModel)]="pedido.entregar" (change)="statusEntregar($event)">Deseja que o pedido seja entregue no endereço?</mat-checkbox>
+  </section>
+
+  <!--Campo observação-->
+  <div class="mb-3 input-group espaco">
   <span for="observacao" class="form textoForm" style="margin-top: 4%; padding-right: 1%;">Observação:</span>
   <textarea class="form-control" id="observacao" [(ngModel)]="pedido.observacao" name="observacao" rows="3"></textarea>
-</div>
-
-
+  </div>
 
     <button type="submit" class="button botao" style="margin-left: 42%;">
     Salvar
@@ -110,7 +122,7 @@
 
     </form>
 
-<!--<div class="modal fade" id="myModal" role="dialog">
+  <!--<div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">!-->
 
           <!-- Modal content-->
@@ -130,5 +142,6 @@
       </div>
   </div>-->
 </div>
+</mat-card>
 </div>
 

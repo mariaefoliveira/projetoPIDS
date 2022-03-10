@@ -11,7 +11,7 @@ export class Pedido {
   idSaborCinco?: number;
   observacao?: string;
   preco?: number;
-  // "entregar": "SIM",
+  entregar?: String; //"SIM",
   dataEntrega?: string;
   endereco?: string;
   ativo?: string;

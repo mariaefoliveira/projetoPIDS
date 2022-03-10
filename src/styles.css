@@ -3,9 +3,11 @@
   background-size: 1508px 1024px;
   background-position-x: -20px;
   background-repeat: no-repeat;
-  background-color: rgba(204, 158, 137, 0.29);
+  background-color: #eeeeee;
 }
 
-.navbar{
-  background-color: #503529;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

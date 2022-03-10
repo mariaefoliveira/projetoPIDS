@@ -1,9 +1,9 @@
 .caixaTituloForm{
-  background-color: #684E43;
-  opacity: 0.81;
   margin-top: 20px;
   margin-left: 10%;
-  border-radius: 55px;
+  height: 20pt;
+  text-align: center;
+  position: relative;
 }
 
 .caixaForm{
@@ -11,7 +11,6 @@
   opacity: 0.81;
   margin-top: 3px;
   margin-left: 10%;
-  border-radius: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -21,9 +20,8 @@
 }
 .texto{
   font: medium;
-  font-family: 'Cardo', serif;
-  color: white;
-  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #38322F;
   font-size: 25px;
 }
 
@@ -35,7 +33,6 @@
 .button{
   margin-top: 2%;
   background-color: #38322F;
-  border-radius: 10px;
   padding: 1% 2%;
 }
 

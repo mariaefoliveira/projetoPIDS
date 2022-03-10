@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PedidoFormComponent } from './pedido-form.component';
+import { PedidoFormComponent } from './pedido-form-copy.component';
 
 describe('PedidoFormComponent', () => {
   let component: PedidoFormComponent;

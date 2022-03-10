@@ -4,5 +4,5 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://localhost:8081/modelo-api/api/v1'
+  apiURL: 'http://localhost:8081/fabricadechocolate-api/api/v1'
 };
