@@ -86,6 +86,7 @@
       </select>
     </div>
 
+<<<<<<< Updated upstream
 <!--Data-->
 <div class="espaco"></div>
 <span for="data" class="input-append date"></span>
@@ -94,17 +95,43 @@
 
 <!--Campo observação-->
 <div class="mb-3 input-group espaco">
+=======
+
+<br>
+  <!--Data-->
+  <span for="data" class="input-append date" style="font-size: 11pt;font: bold;">Agendar Entrega:  </span>
+  <input id="date" type="date" name="data" [(ngModel)]="pedido.dataEntrega">
+
+  <!-- <input matInput [matDatepicker]="picker" name="data" [(ngModel)]="pedido.dataEntrega" (focus)="picker.open()"
+  (click)="picker.open()" readonly>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker> -->
+  <div class="espaco" style="color: red;">**A data poderá ser alterada ao entrar em contato com o funcionário</div>
+
+<br>
+  <!--Entregar-->
+  <section>
+    <!--<input type="checkbox" id="entregar" value="entregar" [(ngModel)]="pedido.entregar" (change)="statusEntregar($event)">-->
+    <mat-checkbox 
+     [(ngModel)]="pedido.entregar" (change)="statusEntregar($event)">Deseja que o pedido seja entregue no endereço?</mat-checkbox>
+  </section>
+
+  <br>
+  <!--Campo observação-->
+  <div class="mb-3 input-group espaco">
+>>>>>>> Stashed changes
   <span for="observacao" class="form textoForm" style="margin-top: 4%; padding-right: 1%;">Observação:</span>
   <textarea class="form-control" id="observacao" [(ngModel)]="pedido.observacao" name="observacao" rows="3"></textarea>
 </div>
 
 
 
-    <button type="submit" class="button botao" style="margin-left: 42%;">
+  <br>
+  <button type="submit" class=" btn btn-dark" style="margin-left: 42%;">
     Salvar
     </button> <!--Envia os dados e volta pro home-->
 
-    <button type="button" class="button botao" [routerLink]= "['/']" style="margin-left:2%">
+    <button mat-button type="button" class=" btn btn-dark" [routerLink]= "['/']" style="margin-left:2%">
       Cancelar
     </button> <!--Cancela e volta pro home-->
 
